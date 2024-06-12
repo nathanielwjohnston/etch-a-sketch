@@ -4,11 +4,19 @@
     box-sizing: border-box;
 }
 
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
 .container {
-    height: 900px;
-    width: 900px;
+    align-self: flex-end;
+    height: 800px;
+    width: 800px;
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 10px;
 }
 
 .grid-square {
