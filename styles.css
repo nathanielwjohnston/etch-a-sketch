@@ -15,3 +15,7 @@
     border: 1px solid;
     flex: 0 0 25%;
 }
+
+.hovering {
+    background-color: black;
+}
