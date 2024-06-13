@@ -16,5 +16,10 @@ container.addEventListener("mouseover", (e) => {
 
 button = document.querySelector("button");
 button.addEventListener("click", () => {
-    let gridSize = prompt("Enter grid size");
+    while (true) {
+        let gridSize = prompt("Enter grid size");
+        if (gridSize <= 100) {
+            break;
+        }
+    }
 })
