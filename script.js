@@ -13,3 +13,8 @@ container.addEventListener("mouseover", (e) => {
         e.target.classList.toggle("hovering");
     }
 })
+
+button = document.querySelector("button");
+button.addEventListener("click", () => {
+    let gridSize = prompt("Enter grid size");
+})
