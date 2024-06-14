@@ -39,7 +39,7 @@ function getRandomValue() {
 
 // mouseover bubbles
 container.addEventListener("mouseover", (e) => {
-    if (!e.target.classList.contains("hovering") && !e.target.classList.contains("container")) {
+    if (!e.target.classList.contains("container")) {
         let square = e.target;
         square.classList.toggle("hovering");
         square.style.backgroundColor = `rgb(${getRandomValue()}, ${getRandomValue()}, ${getRandomValue()})`
