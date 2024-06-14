@@ -22,7 +22,6 @@ body {
 
 .grid-square {
     border: 1px solid;
-    flex-basis: 25%;
 }
 
 .hovering {

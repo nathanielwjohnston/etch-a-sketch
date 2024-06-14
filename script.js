@@ -4,11 +4,17 @@ container = document.querySelector(".container");
 function createGrid(numberOfSquares) {
     for (i = 0; i < numberOfSquares; i++) {
         for (j = 0; j < numberOfSquares; j++) {
-            newDiv = document.createElement("div");
-            newDiv.classList.add("grid-square");
-            container.appendChild(newDiv);
+            newGridSquare = document.createElement("div");
+            newGridSquare.classList.add("grid-square");
+            container.appendChild(newGridSquare);
         }
     }
+    let basis = 100 / numberOfSquares;
+    gridSquares = document.querySelectorAll(".grid-square");
+    console.log(gridSquares);
+    gridSquares.forEach(square => {
+        square.style.flexBasis = `${basis}%`;  
+    });
 }
 
 function clearGrid() {
@@ -39,10 +45,4 @@ button.addEventListener("click", () => {
     let gridSize = getGridSize();
     clearGrid();
     createGrid(gridSize);
-    let basis = 100 / gridSize;
-    gridSquares = document.querySelectorAll(".grid-square");
-    console.log(gridSquares);
-    gridSquares.forEach(square => {
-        square.style.flexBasis = `${basis}%`;  
-    });
 })
