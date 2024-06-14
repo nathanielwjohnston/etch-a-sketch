@@ -11,7 +11,6 @@ function createGrid(numberOfSquares) {
     }
     let basis = 100 / numberOfSquares;
     gridSquares = document.querySelectorAll(".grid-square");
-    console.log(gridSquares);
     gridSquares.forEach(square => {
         square.style.flexBasis = `${basis}%`;  
     });
@@ -50,12 +49,10 @@ container.addEventListener("mouseover", (e) => {
             square.classList.toggle("hovering");
             square.style.opacity = "1";
         }
-        
         square.style.backgroundColor = `rgb(${getRandomValue()}, ${getRandomValue()}, ${getRandomValue()})`
     }
     if (square.style.opacity > 0) {
         square.style.opacity -= 0.1;
-
     }
 })
 
