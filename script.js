@@ -5,6 +5,7 @@ function createGrid(numberOfSquares) {
         for (j = 0; j < numberOfSquares; j++) {
             newGridSquare = document.createElement("div");
             newGridSquare.classList.add("grid-square");
+            newGridSquare.style.backgroundColor = "white";
             container.appendChild(newGridSquare);
         }
     }
@@ -14,6 +15,9 @@ function createGrid(numberOfSquares) {
     gridSquares.forEach(square => {
         square.style.flexBasis = `${basis}%`;  
     });
+
+    // For darkening effect
+    container.style.backgroundColor = "black";
 }
 
 function clearGrid() {
@@ -39,10 +43,19 @@ function getRandomValue() {
 
 // mouseover bubbles
 container.addEventListener("mouseover", (e) => {
-    if (!e.target.classList.contains("container")) {
-        let square = e.target;
-        square.classList.toggle("hovering");
+    let square = e.target;
+
+    if (!square.classList.contains("container")) {
+        if (!square.classList.contains("hovering")) {
+            square.classList.toggle("hovering");
+            square.style.opacity = "1";
+        }
+        
         square.style.backgroundColor = `rgb(${getRandomValue()}, ${getRandomValue()}, ${getRandomValue()})`
+    }
+    if (square.style.opacity > 0) {
+        square.style.opacity -= 0.1;
+
     }
 })
 
