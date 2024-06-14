@@ -32,10 +32,17 @@ function getGridSize() {
     }
 }
 
+// gets random value between 0 and 255
+function getRandomValue() {
+    return Math.round(Math.random() * 255);
+}
+
 // mouseover bubbles
 container.addEventListener("mouseover", (e) => {
     if (!e.target.classList.contains("hovering") && !e.target.classList.contains("container")) {
-        e.target.classList.toggle("hovering");
+        let square = e.target;
+        square.classList.toggle("hovering");
+        square.style.backgroundColor = `rgb(${getRandomValue()}, ${getRandomValue()}, ${getRandomValue()})`
     }
 })
 
