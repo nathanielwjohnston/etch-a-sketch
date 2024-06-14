@@ -1,4 +1,3 @@
-// Create grid
 container = document.querySelector(".container");
 
 function createGrid(numberOfSquares) {
