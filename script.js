@@ -18,6 +18,15 @@ function clearGrid() {
     })
 }
 
+function getGridSize() {
+    while (true) {
+        gridSize = prompt("Enter grid size");
+        if (gridSize <= 100) {
+            return gridSize;
+        }
+    }
+}
+
 // mouseover bubbles
 container.addEventListener("mouseover", (e) => {
     if (!e.target.classList.contains("hovering") && !e.target.classList.contains("container")) {
@@ -27,13 +36,7 @@ container.addEventListener("mouseover", (e) => {
 
 button = document.querySelector("button");
 button.addEventListener("click", () => {
-    let gridSize = null
-    while (true) {
-        gridSize = prompt("Enter grid size");
-        if (gridSize <= 100) {
-            break;
-        }
-    }
+    let gridSize = getGridSize();
     clearGrid();
     createGrid(gridSize);
     let basis = 100 / gridSize;
